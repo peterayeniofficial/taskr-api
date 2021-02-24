@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 
 @EntityRepository(User)
-export class UserRespository extends Repository<User> {
+export class UserRepository extends Repository<User> {
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void> {
     const { username, password } = authCredentialsDto;
     const user = new User();

@@ -47,7 +47,7 @@ export class TaskRepository extends Repository<Task> {
     task.user = user;
 
     try {
-      await this.save(task);
+      await task.save();
     } catch (error) {
       throw new InternalServerErrorException();
       this.logger.error(

@@ -16,12 +16,11 @@ import { TasksService } from './tasks.service';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTaskFilterDto } from './dto/get-tasks-filter.dto';
 import { TaskStatusValidationPipe } from './pipes/task-status-validation.pipe';
-import { Task } from '../../dist/tasks/task.model.d';
 import { TaskStatus } from './task-status.enum';
 import { AuthGuard } from '@nestjs/passport';
 import { GetUser } from 'src/auth/decorators/get-user.decorator';
 import { User } from '../auth/user.entity';
-import { json } from 'express';
+import { Task } from './task.entity';
 
 @Controller('tasks')
 @UseGuards(AuthGuard())

@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserRespository } from './user.repository';
+import { UserRepository } from './user.repository';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
@@ -9,8 +9,8 @@ import { JwtPayload } from './jwt-payload.interface';
 export class AuthService {
   private logger = new Logger('AuthService');
   constructor(
-    @InjectRepository(UserRespository)
-    private readonly userRepository: UserRespository,
+    @InjectRepository(UserRepository)
+    private readonly userRepository: UserRepository,
     private readonly jwtService: JwtService,
   ) {}
 
